@@ -188,33 +188,32 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 70% 60% at 80% 50%, rgba(255,77,26,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(26,86,255,0.14) 0%, transparent 55%),
-        linear-gradient(170deg, #0a0c10 0%, #0d1220 60%, #0a0c10 100%);
+      background-image: url('hero-bg.jpg');
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
     }
 
-    /* Grid texture */
+    /* 이미지 위 어두운 오버레이 — 텍스트 가독성 확보 */
     .hero-bg::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 60px 60px;
+      background:
+        linear-gradient(90deg,
+          rgba(10,12,16,0.88) 0%,
+          rgba(10,12,16,0.70) 45%,
+          rgba(10,12,16,0.30) 75%,
+          rgba(10,12,16,0.10) 100%
+        );
     }
 
-    /* Diagonal stripe accent */
+    /* 하단 자연스러운 페이드 */
     .hero-bg::after {
       content: '';
       position: absolute;
-      top: -10%;
-      right: -5%;
-      width: 55%;
-      height: 120%;
-      background: linear-gradient(135deg, rgba(255,77,26,0.06) 0%, transparent 50%);
-      clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,12,16,0.6) 0%, transparent 40%);
     }
 
     .hero-inner {
@@ -228,7 +227,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 64px;
       align-items: center;
-      padding: 80px 0 90px;
+      padding: 100px 0 110px;
     }
 
     .eyebrow {
@@ -297,44 +296,6 @@
       flex-wrap: wrap;
     }
 
-    /* Stat strip */
-    .stat-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      margin-top: 54px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .stat-item {
-      background: rgba(255,255,255,0.04);
-      padding: 22px 24px;
-      transition: background var(--transition);
-    }
-
-    .stat-item:hover { background: rgba(255,255,255,0.08); }
-
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 6px;
-    }
-
-    .stat-num .unit { font-size: 16px; color: var(--orange); }
-
-    .stat-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      font-weight: 500;
-      line-height: 1.6;
-    }
 
     /* Hero visual */
     .hero-visual {
@@ -1333,20 +1294,6 @@
             <div class="hero-actions">
               <a class="btn btn-orange btn-lg" href="#quote">무료 견적 받기</a>
               <a class="btn btn-ghost btn-lg" href="tel:16007616">☎ 1600-7616</a>
-            </div>
-            <div class="stat-strip">
-              <div class="stat-item">
-                <div class="stat-num">전국<span class="unit"> ✓</span></div>
-                <div class="stat-label">전국 지역 탁송 상담 가능</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-num">맞춤<span class="unit"> ✓</span></div>
-                <div class="stat-label">거리·방식별 맞춤 견적 안내</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-num">안전<span class="unit"> ✓</span></div>
-                <div class="stat-label">인수부터 도착까지 진행 안내</div>
-              </div>
             </div>
           </div>
 
